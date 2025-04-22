@@ -219,6 +219,55 @@ const translations = {
     uz_cyrillic: "Қидириш",
     ru: "Поиск",
     en: "Search"
+  },
+  // Added translations for missing keys
+  uzs: {
+    uz_latin: "so'm",
+    uz_cyrillic: "сўм",
+    ru: "сум",
+    en: "UZS"
+  },
+  sales: {
+    uz_latin: "sotuvlar",
+    uz_cyrillic: "сотувлар",
+    ru: "продажи",
+    en: "sales"
+  },
+  day: {
+    uz_latin: "kun",
+    uz_cyrillic: "кун",
+    ru: "день",
+    en: "day"
+  },
+  available: {
+    uz_latin: "mavjud",
+    uz_cyrillic: "мавжуд",
+    ru: "доступно",
+    en: "available"
+  },
+  addToCart: {
+    uz_latin: "Savatga qo'shish",
+    uz_cyrillic: "Саватга қўшиш",
+    ru: "Добавить в корзину",
+    en: "Add to cart"
+  },
+  noProductsFound: {
+    uz_latin: "Mahsulotlar topilmadi",
+    uz_cyrillic: "Маҳсулотлар топилмади",
+    ru: "Товары не найдены",
+    en: "No products found"
+  },
+  cartEmpty: {
+    uz_latin: "Savat bo'sh",
+    uz_cyrillic: "Сават бўш",
+    ru: "Корзина пуста",
+    en: "Cart is empty"
+  },
+  checkout: {
+    uz_latin: "Buyurtma berish",
+    uz_cyrillic: "Буюртма бериш",
+    ru: "Оформить заказ",
+    en: "Checkout"
   }
 };
 
