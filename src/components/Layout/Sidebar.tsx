@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/context/LanguageContext";
@@ -16,6 +15,7 @@ import {
   Settings,
   LogOut,
   FileText,
+  CreditCard,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -102,10 +102,10 @@ export function Sidebar({ className }: SidebarProps) {
           />
           <SidebarLink 
             to="/installments" 
-            icon={<Calendar />} 
+            icon={<CreditCard />} 
             label={t("installments")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/installments"} 
+            collapsed={collapsed}
+            active={location.pathname.startsWith("/installments")} 
           />
           <SidebarLink 
             to="/settings" 

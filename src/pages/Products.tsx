@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useTranslation } from "@/context/LanguageContext";
 import { Input } from "@/components/ui/input";
@@ -6,16 +5,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 import { Search, Plus } from "lucide-react";
+import { AddProductDialog } from "@/components/Products/AddProductDialog";
 
 export default function Products() {
   const { t } = useTranslation();
   const [search, setSearch] = useState("");
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
+
+  const handleAddProduct = (product: any) => {
+    console.log("Adding product:", product);
+  };
 
   return (
     <div className="space-y-6 animate-fade-in">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold gradient-heading">{t("products")}</h1>
-        <Button className="flex items-center gap-2">
+        <Button className="flex items-center gap-2" onClick={() => setIsAddDialogOpen(true)}>
           <Plus className="h-4 w-4" />
           {t("add")} {t("product")}
         </Button>
@@ -57,6 +62,12 @@ export default function Products() {
           </Table>
         </CardContent>
       </Card>
+
+      <AddProductDialog 
+        open={isAddDialogOpen}
+        onOpenChange={setIsAddDialogOpen}
+        onAddProduct={handleAddProduct}
+      />
     </div>
   );
 }
