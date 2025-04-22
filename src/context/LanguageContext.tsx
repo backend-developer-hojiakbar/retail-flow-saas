@@ -571,6 +571,98 @@ const translations = {
     uz_cyrillic: "Обуна",
     ru: "Подписка",
     en: "Subscription"
+  },
+  // Product related translations
+  product: {
+    uz_latin: "Mahsulot",
+    uz_cyrillic: "Маҳсулот",
+    ru: "Товар",
+    en: "Product"
+  },
+  addProduct: {
+    uz_latin: "Mahsulot qo'shish",
+    uz_cyrillic: "Маҳсулот қўшиш",
+    ru: "Добавить товар",
+    en: "Add Product"
+  },
+  addProductDescription: {
+    uz_latin: "Yangi mahsulot qo'shish uchun ma'lumotlarni to'ldiring",
+    uz_cyrillic: "Янги маҳсулот қўшиш учун маълумотларни тўлдиринг",
+    ru: "Заполните информацию для добавления нового товара",
+    en: "Fill in the information to add a new product"
+  },
+  barcode: {
+    uz_latin: "Shtrix kod",
+    uz_cyrillic: "Штрих код",
+    ru: "Штрих-код",
+    en: "Barcode"
+  },
+  category: {
+    uz_latin: "Kategoriya",
+    uz_cyrillic: "Категория",
+    ru: "Категория",
+    en: "Category"
+  },
+  priceUzs: {
+    uz_latin: "Narxi (so'm)",
+    uz_cyrillic: "Нархи (сўм)",
+    ru: "Цена (сум)",
+    en: "Price (UZS)"
+  },
+  priceUsd: {
+    uz_latin: "Narxi (dollar)",
+    uz_cyrillic: "Нархи (доллар)",
+    ru: "Цена (доллар)",
+    en: "Price (USD)"
+  },
+  minStock: {
+    uz_latin: "Minimal zaxira",
+    uz_cyrillic: "Минимал захира",
+    ru: "Минимальный запас",
+    en: "Min Stock"
+  },
+  productAdded: {
+    uz_latin: "Mahsulot qo'shildi",
+    uz_cyrillic: "Маҳсулот қўшилди",
+    ru: "Товар добавлен",
+    en: "Product added"
+  },
+  // Installment related translations
+  totalAmount: {
+    uz_latin: "Umumiy summa",
+    uz_cyrillic: "Умумий сумма",
+    ru: "Общая сумма",
+    en: "Total amount"
+  },
+  remainingAmount: {
+    uz_latin: "Qolgan summa",
+    uz_cyrillic: "Қолган сумма",
+    ru: "Оставшаяся сумма",
+    en: "Remaining amount"
+  },
+  nextPayment: {
+    uz_latin: "Keyingi to'lov",
+    uz_cyrillic: "Кейинги тўлов",
+    ru: "Следующий платеж",
+    en: "Next payment"
+  },
+  view: {
+    uz_latin: "Ko'rish",
+    uz_cyrillic: "Кўриш",
+    ru: "Просмотр",
+    en: "View"
+  },
+  completed: {
+    uz_latin: "Tugallangan",
+    uz_cyrillic: "Тугалланган",
+    ru: "Завершено",
+    en: "Completed"
+  },
+  overdue: {
+    uz_latin: "Muddati o'tgan",
+    uz_cyrillic: "Муддати ўтган",
+    ru: "Просрочено",
+    en: "Overdue"
   }
 };
 

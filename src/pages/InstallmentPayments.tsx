@@ -26,15 +26,15 @@ export default function InstallmentPayments() {
   ];
 
   const getStatusBadge = (status: string) => {
-    const statusColors = {
+    const statusColors: Record<string, string> = {
       active: "bg-green-500",
       completed: "bg-blue-500",
       overdue: "bg-red-500",
     };
 
     return (
-      <Badge className={statusColors[status as keyof typeof statusColors]}>
-        {t(status)}
+      <Badge className={statusColors[status] || ""}>
+        {t(status as any)}
       </Badge>
     );
   };
