@@ -149,8 +149,8 @@ const translations = {
   paymentMethod: {
     uz_latin: "To'lov usuli",
     uz_cyrillic: "Тўлов усули",
-    ru: "Способ опла��ы",
-    en: "Payment Method"
+    ru: "Способ оплаты",
+    en: "Payment method"
   },
   cash: {
     uz_latin: "Naqd",
@@ -505,6 +505,72 @@ const translations = {
     uz_cyrillic: "Омбор ҳолати",
     ru: "Статус склада",
     en: "Inventory Status"
+  },
+  report: {
+    uz_latin: "hisobot",
+    uz_cyrillic: "ҳисобот",
+    ru: "отчет",
+    en: "report"
+  },
+  no_data: {
+    uz_latin: "Ma'lumot yo'q",
+    uz_cyrillic: "Маълумот йўқ",
+    ru: "Нет данных",
+    en: "No data"
+  },
+  customer: {
+    uz_latin: "Mijoz",
+    uz_cyrillic: "Мижоз",
+    ru: "Клиент",
+    en: "Customer"
+  },
+  add: {
+    uz_latin: "Qo'shish",
+    uz_cyrillic: "Қўшиш",
+    ru: "Добавить",
+    en: "Add"
+  },
+  name: {
+    uz_latin: "Nomi",
+    uz_cyrillic: "Номи",
+    ru: "Название",
+    en: "Name"
+  },
+  stock: {
+    uz_latin: "Zaxira",
+    uz_cyrillic: "Захира",
+    ru: "Запас",
+    en: "Stock"
+  },
+  date: {
+    uz_latin: "Sana",
+    uz_cyrillic: "Сана",
+    ru: "Дата",
+    en: "Date"
+  },
+  payment_method: {
+    uz_latin: "To'lov usuli",
+    uz_cyrillic: "Тўлов усули",
+    ru: "Способ оплаты",
+    en: "Payment method"
+  },
+  store: {
+    uz_latin: "Do'kon",
+    uz_cyrillic: "Дўкон",
+    ru: "Магазин",
+    en: "Store"
+  },
+  information: {
+    uz_latin: "Ma'lumot",
+    uz_cyrillic: "Маълумот",
+    ru: "Информация",
+    en: "Information"
+  },
+  subscription: {
+    uz_latin: "Obuna",
+    uz_cyrillic: "Обуна",
+    ru: "Подписка",
+    en: "Subscription"
   }
 };
 
