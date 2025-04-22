@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Search, Plus, Edit, Trash2, UserCheck, UserX } from "lucide-react";
+import { Search, Plus, Edit, Trash2, UserCheck } from "lucide-react";
 import { toast } from "sonner";
 import {
   Dialog,
