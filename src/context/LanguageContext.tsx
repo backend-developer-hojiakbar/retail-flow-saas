@@ -443,6 +443,20 @@ const translations = {
     uz_cyrillic: "Рад этиш",
     ru: "Отклонить",
     en: "Reject"
+  },
+  // Add the missing actions key
+  actions: {
+    uz_latin: "Amallar",
+    uz_cyrillic: "Амаллар",
+    ru: "Действия",
+    en: "Actions"
+  },
+  // Add users key for translations
+  users: {
+    uz_latin: "Foydalanuvchilar",
+    uz_cyrillic: "Фойдаланувчилар",
+    ru: "Пользователи",
+    en: "Users"
   }
 };
 

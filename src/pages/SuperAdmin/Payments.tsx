@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useTranslation } from "@/context/LanguageContext";
 import { SubscriptionPayment, SubscriptionTier } from "@/types";
@@ -212,13 +211,11 @@ export default function Payments() {
   };
 
   const filteredPayments = payments.filter((payment) => {
-    // Apply search filter
     const searchMatch =
       search === "" ||
       storeNames[payment.storeId].toLowerCase().includes(search.toLowerCase()) ||
       payment.id.toLowerCase().includes(search.toLowerCase());
 
-    // Apply status filter
     const statusMatch = statusFilter === "" || payment.status === statusFilter;
 
     return searchMatch && statusMatch;
@@ -346,7 +343,6 @@ export default function Payments() {
         </CardContent>
       </Card>
 
-      {/* Receipt Image Dialog */}
       <Dialog open={isReceiptDialogOpen} onOpenChange={setIsReceiptDialogOpen}>
         <DialogContent className="max-w-md">
           <DialogHeader>
@@ -371,7 +367,6 @@ export default function Payments() {
         </DialogContent>
       </Dialog>
 
-      {/* Approve Payment Dialog */}
       <Dialog
         open={isApproveDialogOpen}
         onOpenChange={setIsApproveDialogOpen}
@@ -419,7 +414,6 @@ export default function Payments() {
         </DialogContent>
       </Dialog>
 
-      {/* Reject Payment Dialog */}
       <Dialog
         open={isRejectDialogOpen}
         onOpenChange={setIsRejectDialogOpen}
