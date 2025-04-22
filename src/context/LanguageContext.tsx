@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext } from 'react';
 import { Language } from '@/types';
 import { useApp } from '@/context/AppContext';
@@ -573,12 +574,6 @@ const translations = {
     en: "Subscription"
   },
   // Product related translations
-  product: {
-    uz_latin: "Mahsulot",
-    uz_cyrillic: "Маҳсулот",
-    ru: "Товар",
-    en: "Product"
-  },
   addProduct: {
     uz_latin: "Mahsulot qo'shish",
     uz_cyrillic: "Маҳсулот қўшиш",
