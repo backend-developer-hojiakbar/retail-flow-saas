@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Language, User, ExchangeRate, Store } from '@/types';
+import { Language, User, ExchangeRate, Store, SubscriptionPlan } from '@/types';
+import { toast } from 'sonner';
 
 interface AppContextType {
   language: Language;
@@ -11,6 +12,8 @@ interface AppContextType {
   exchangeRate: ExchangeRate;
   currentStore: Store | null;
   isAuthenticated: boolean;
+  isSuperuser: boolean;
+  subscriptionPlans: SubscriptionPlan[];
   login: (username: string, password: string) => Promise<void>;
   logout: () => void;
 }
@@ -28,6 +31,14 @@ const demoUser: User = {
   role: "admin",
   storeId: "1",
   phone: "+998 90 123 4567"
+};
+
+const demoSuperuser: User = {
+  id: "super1",
+  name: "Superadmin",
+  username: "superadmin",
+  role: "superuser",
+  phone: "+998 99 999 9999"
 };
 
 const demoStore: Store = {
@@ -58,6 +69,64 @@ const demoStore: Store = {
   ]
 };
 
+const subscriptionPlans: SubscriptionPlan[] = [
+  {
+    tier: "free",
+    name: "Free",
+    price: 0,
+    features: ["1 branch", "100 products", "Basic features"],
+    maxProducts: 100,
+    maxBranches: 1,
+    maxRegisters: 1,
+    allowsInstallments: false,
+    allowsMultipleCurrencies: false
+  },
+  {
+    tier: "silver",
+    name: "Silver",
+    price: 199000,
+    features: ["2 branches", "500 products", "Basic reports", "Installment payments"],
+    maxProducts: 500,
+    maxBranches: 2,
+    maxRegisters: 5,
+    allowsInstallments: true,
+    allowsMultipleCurrencies: false
+  },
+  {
+    tier: "gold",
+    name: "Gold",
+    price: 399000,
+    features: ["5 branches", "2000 products", "Advanced reports", "Multi-currency", "SMS notifications"],
+    maxProducts: 2000,
+    maxBranches: 5,
+    maxRegisters: 15,
+    allowsInstallments: true,
+    allowsMultipleCurrencies: true
+  },
+  {
+    tier: "platinum",
+    name: "Platinum",
+    price: 799000,
+    features: ["10 branches", "10000 products", "Premium support", "All features"],
+    maxProducts: 10000,
+    maxBranches: 10,
+    maxRegisters: 30,
+    allowsInstallments: true,
+    allowsMultipleCurrencies: true
+  },
+  {
+    tier: "vip",
+    name: "V.I.P",
+    price: 1999000,
+    features: ["Unlimited branches", "Unlimited products", "24/7 Support", "Custom features"],
+    maxProducts: Infinity,
+    maxBranches: Infinity,
+    maxRegisters: Infinity,
+    allowsInstallments: true,
+    allowsMultipleCurrencies: true
+  }
+];
+
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -67,6 +136,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [exchangeRate, setExchangeRate] = useState<ExchangeRate>(initialExchangeRate);
   const [currentStore, setCurrentStore] = useState<Store | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isSuperuser, setIsSuperuser] = useState<boolean>(false);
 
   // Check system preference for dark mode
   useEffect(() => {
@@ -93,6 +163,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       setCurrentUser(demoUser);
       setCurrentStore(demoStore);
       setIsAuthenticated(true);
+      setIsSuperuser(false);
+      toast.success("Login successful as store admin");
+    } else if (username === "superadmin" && password === "xAI2025") {
+      setCurrentUser(demoSuperuser);
+      setCurrentStore(null);
+      setIsAuthenticated(true);
+      setIsSuperuser(true);
+      toast.success("Login successful as superadmin");
     } else {
       throw new Error("Invalid credentials");
     }
@@ -102,6 +180,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setCurrentUser(null);
     setCurrentStore(null);
     setIsAuthenticated(false);
+    setIsSuperuser(false);
   };
 
   const value = {
@@ -113,6 +192,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     exchangeRate,
     currentStore,
     isAuthenticated,
+    isSuperuser,
+    subscriptionPlans,
     login,
     logout,
   };

@@ -268,6 +268,181 @@ const translations = {
     uz_cyrillic: "Буюртма бериш",
     ru: "Оформить заказ",
     en: "Checkout"
+  },
+  // Superadmin translations
+  superadmin: {
+    uz_latin: "Bosh admin",
+    uz_cyrillic: "Бош админ",
+    ru: "Суперадмин",
+    en: "Superadmin"
+  },
+  stores: {
+    uz_latin: "Do'konlar",
+    uz_cyrillic: "Дўконлар",
+    ru: "Магазины",
+    en: "Stores"
+  },
+  subscriptions: {
+    uz_latin: "Obunalar",
+    uz_cyrillic: "Обуналар",
+    ru: "Подписки",
+    en: "Subscriptions"
+  },
+  payments: {
+    uz_latin: "To'lovlar",
+    uz_cyrillic: "Тўловлар",
+    ru: "Платежи",
+    en: "Payments"
+  },
+  storeOwner: {
+    uz_latin: "Do'kon egasi",
+    uz_cyrillic: "Дўкон эгаси",
+    ru: "Владелец магазина",
+    en: "Store Owner"
+  },
+  status: {
+    uz_latin: "Holati",
+    uz_cyrillic: "Ҳолати",
+    ru: "Статус",
+    en: "Status"
+  },
+  active: {
+    uz_latin: "Faol",
+    uz_cyrillic: "Фаол",
+    ru: "Активный",
+    en: "Active"
+  },
+  expired: {
+    uz_latin: "Muddati tugagan",
+    uz_cyrillic: "Муддати тугаган",
+    ru: "Истек срок",
+    en: "Expired"
+  },
+  blocked: {
+    uz_latin: "Bloklangan",
+    uz_cyrillic: "Блокланган",
+    ru: "Заблокирован",
+    en: "Blocked"
+  },
+  subscriptionType: {
+    uz_latin: "Obuna turi",
+    uz_cyrillic: "Обуна тури",
+    ru: "Тип подписки",
+    en: "Subscription Type"
+  },
+  validUntil: {
+    uz_latin: "Amal qilish muddati",
+    uz_cyrillic: "Амал қилиш муддати",
+    ru: "Действителен до",
+    en: "Valid Until"
+  },
+  createStore: {
+    uz_latin: "Do'kon yaratish",
+    uz_cyrillic: "Дўкон яратиш",
+    ru: "Создать магазин",
+    en: "Create Store"
+  },
+  storeName: {
+    uz_latin: "Do'kon nomi",
+    uz_cyrillic: "Дўкон номи",
+    ru: "Название магазина",
+    en: "Store Name"
+  },
+  ownerName: {
+    uz_latin: "Egasining ismi",
+    uz_cyrillic: "Эгасининг исми",
+    ru: "Имя владельца",
+    en: "Owner Name"
+  },
+  ownerPhone: {
+    uz_latin: "Telefon raqami",
+    uz_cyrillic: "Телефон рақами",
+    ru: "Номер телефона",
+    en: "Phone Number"
+  },
+  features: {
+    uz_latin: "Imkoniyatlar",
+    uz_cyrillic: "Имкониятлар",
+    ru: "Возможности",
+    en: "Features"
+  },
+  extend: {
+    uz_latin: "Muddatni uzaytirish",
+    uz_cyrillic: "Муддатни узайтириш",
+    ru: "Продлить",
+    en: "Extend"
+  },
+  block: {
+    uz_latin: "Bloklash",
+    uz_cyrillic: "Блоклаш",
+    ru: "Блокировать",
+    en: "Block"
+  },
+  unblock: {
+    uz_latin: "Blokdan chiqarish",
+    uz_cyrillic: "Блокдан чиқариш",
+    ru: "Разблокировать",
+    en: "Unblock"
+  },
+  paymentStatus: {
+    uz_latin: "To'lov holati",
+    uz_cyrillic: "Тўлов ҳолати",
+    ru: "Статус платежа",
+    en: "Payment Status"
+  },
+  pending: {
+    uz_latin: "Kutilmoqda",
+    uz_cyrillic: "Кутилмоқда",
+    ru: "В ожидании",
+    en: "Pending"
+  },
+  approved: {
+    uz_latin: "Tasdiqlangan",
+    uz_cyrillic: "Тасдиқланган",
+    ru: "Подтвержден",
+    en: "Approved"
+  },
+  rejected: {
+    uz_latin: "Rad etilgan",
+    uz_cyrillic: "Рад этилган",
+    ru: "Отклонен",
+    en: "Rejected"
+  },
+  amount: {
+    uz_latin: "Summa",
+    uz_cyrillic: "Сумма",
+    ru: "Сумма",
+    en: "Amount"
+  },
+  paymentDate: {
+    uz_latin: "To'lov sanasi",
+    uz_cyrillic: "Тўлов санаси",
+    ru: "Дата платежа",
+    en: "Payment Date"
+  },
+  receipt: {
+    uz_latin: "Chek",
+    uz_cyrillic: "Чек",
+    ru: "Чек",
+    en: "Receipt"
+  },
+  viewImage: {
+    uz_latin: "Rasmni ko'rish",
+    uz_cyrillic: "Расмни кўриш",
+    ru: "Посмотреть изображение",
+    en: "View Image"
+  },
+  approve: {
+    uz_latin: "Tasdiqlash",
+    uz_cyrillic: "Тасдиқлаш",
+    ru: "Подтвердить",
+    en: "Approve"
+  },
+  reject: {
+    uz_latin: "Rad etish",
+    uz_cyrillic: "Рад этиш",
+    ru: "Отклонить",
+    en: "Reject"
   }
 };
 

@@ -89,7 +89,6 @@ export interface Sale {
     credit?: {
       customer: Customer;
       dueDate: Date;
-      initialPayment: number;
     };
     installment?: {
       customer: Customer;
@@ -146,4 +145,29 @@ export interface InstallmentPayment {
 export interface ExchangeRate {
   date: Date;
   usdToUzs: number;
+}
+
+export interface SubscriptionPayment {
+  id: string;
+  storeId: string;
+  amount: number;
+  date: Date;
+  receiptImage?: string;
+  status: "pending" | "approved" | "rejected";
+  subscriptionTier: SubscriptionTier;
+  months: number;
+  approvedBy?: string;
+  approvedDate?: Date;
+}
+
+export interface SubscriptionPlan {
+  tier: SubscriptionTier;
+  name: string;
+  price: number; // monthly price
+  features: string[];
+  maxProducts: number;
+  maxBranches: number;
+  maxRegisters: number;
+  allowsInstallments: boolean;
+  allowsMultipleCurrencies: boolean;
 }

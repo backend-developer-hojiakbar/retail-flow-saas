@@ -6,16 +6,15 @@ import { useApp } from "@/context/AppContext";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-  Home,
-  ShoppingCart,
-  Package,
+  LayoutDashboard,
+  Store,
+  CreditCard,
+  Receipt,
   ChevronLeft,
   ChevronRight,
-  BarChart3,
-  Calendar,
   Settings,
   LogOut,
-  FileText,
+  Users,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -43,7 +42,7 @@ export function Sidebar({ className }: SidebarProps) {
       <div className="flex items-center justify-between p-4">
         {!collapsed && (
           <h2 className="text-xl font-bold text-sidebar-foreground gradient-heading">
-            Smart POS
+            Smart POS Admin
           </h2>
         )}
         <Button
@@ -59,60 +58,46 @@ export function Sidebar({ className }: SidebarProps) {
       <div className="flex-1 overflow-y-auto py-4">
         <nav className="space-y-1 px-2">
           <SidebarLink 
-            to="/" 
-            icon={<Home />} 
+            to="/superadmin" 
+            icon={<LayoutDashboard />} 
             label={t("dashboard")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/"} 
+            collapsed={collapsed}
+            active={location.pathname === "/superadmin"} 
           />
           <SidebarLink 
-            to="/pos" 
-            icon={<ShoppingCart />} 
-            label={t("pos")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/pos"} 
+            to="/superadmin/stores" 
+            icon={<Store />} 
+            label={t("stores")} 
+            collapsed={collapsed}
+            active={location.pathname.startsWith("/superadmin/stores")} 
           />
           <SidebarLink 
-            to="/sales" 
-            icon={<FileText />} 
-            label={t("sales")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/sales"} 
+            to="/superadmin/subscriptions" 
+            icon={<CreditCard />} 
+            label={t("subscriptions")} 
+            collapsed={collapsed}
+            active={location.pathname.startsWith("/superadmin/subscriptions")} 
           />
           <SidebarLink 
-            to="/products" 
-            icon={<Package />} 
-            label={t("products")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/products"} 
+            to="/superadmin/payments" 
+            icon={<Receipt />} 
+            label={t("payments")} 
+            collapsed={collapsed}
+            active={location.pathname.startsWith("/superadmin/payments")} 
           />
           <SidebarLink 
-            to="/inventory" 
-            icon={<Package />} 
-            label={t("inventory")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/inventory"} 
+            to="/superadmin/users" 
+            icon={<Users />} 
+            label="Users" 
+            collapsed={collapsed}
+            active={location.pathname.startsWith("/superadmin/users")} 
           />
           <SidebarLink 
-            to="/reports" 
-            icon={<BarChart3 />} 
-            label={t("reports")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/reports"} 
-          />
-          <SidebarLink 
-            to="/installments" 
-            icon={<Calendar />} 
-            label={t("installments")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/installments"} 
-          />
-          <SidebarLink 
-            to="/settings" 
+            to="/superadmin/settings" 
             icon={<Settings />} 
             label={t("settings")} 
-            collapsed={collapsed} 
-            active={location.pathname === "/settings"} 
+            collapsed={collapsed}
+            active={location.pathname.startsWith("/superadmin/settings")} 
           />
         </nav>
       </div>
@@ -148,9 +133,9 @@ function SidebarLink({ to, icon, label, collapsed, active }: SidebarLinkProps) {
       <Button
         variant="ghost"
         className={cn(
-          "w-full justify-start text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+          "w-full justify-start hover:text-sidebar-foreground hover:bg-sidebar-accent",
           collapsed ? "px-2" : "px-4",
-          active ? "bg-sidebar-accent" : ""
+          active ? "bg-sidebar-accent text-sidebar-foreground" : "text-sidebar-foreground/70"
         )}
       >
         <span className="h-5 w-5 mr-2">{icon}</span>

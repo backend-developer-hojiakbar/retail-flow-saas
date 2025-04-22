@@ -8,13 +8,15 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Login() {
-  const { isAuthenticated, login } = useApp();
+  const { isAuthenticated, isSuperuser, login } = useApp();
   const { t } = useTranslation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [loginType, setLoginType] = useState<"store" | "superadmin">("store");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +24,6 @@ export default function Login() {
 
     try {
       await login(username, password);
-      toast.success("Login successful");
     } catch (error) {
       toast.error("Invalid username or password");
       console.error(error);
@@ -32,8 +33,22 @@ export default function Login() {
   };
 
   if (isAuthenticated) {
-    return <Navigate to="/" />;
+    if (isSuperuser) {
+      return <Navigate to="/superadmin" />;
+    } else {
+      return <Navigate to="/" />;
+    }
   }
+
+  const fillStoreDemo = () => {
+    setUsername("demo");
+    setPassword("password");
+  };
+
+  const fillSuperAdminDemo = () => {
+    setUsername("superadmin");
+    setPassword("xAI2025");
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-pos-background to-background">
@@ -53,6 +68,18 @@ export default function Login() {
         </div>
 
         <div className="bg-card/90 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border">
+          <Tabs 
+            defaultValue="store" 
+            value={loginType}
+            onValueChange={(value) => setLoginType(value as "store" | "superadmin")}
+            className="mb-4"
+          >
+            <TabsList className="grid grid-cols-2 w-full">
+              <TabsTrigger value="store">Store Login</TabsTrigger>
+              <TabsTrigger value="superadmin">Superadmin</TabsTrigger>
+            </TabsList>
+          </Tabs>
+
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="username" className="text-sm font-medium">
@@ -63,7 +90,7 @@ export default function Login() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="demo"
+                placeholder={loginType === "store" ? "demo" : "superadmin"}
                 required
                 disabled={isLoading}
                 autoComplete="username"
@@ -104,8 +131,33 @@ export default function Login() {
 
             <div className="text-center text-xs text-muted-foreground pt-4">
               <p>Demo credentials:</p>
-              <p>Username: demo</p>
-              <p>Password: password</p>
+              {loginType === "store" ? (
+                <>
+                  <p>Username: demo</p>
+                  <p>Password: password</p>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={fillStoreDemo} 
+                    className="mt-2 text-xs"
+                  >
+                    Auto-fill demo credentials
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <p>Username: superadmin</p>
+                  <p>Password: xAI2025</p>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={fillSuperAdminDemo} 
+                    className="mt-2 text-xs"
+                  >
+                    Auto-fill superadmin credentials
+                  </Button>
+                </>
+              )}
             </div>
           </form>
         </div>
