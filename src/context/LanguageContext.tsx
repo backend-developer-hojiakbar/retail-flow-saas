@@ -627,7 +627,6 @@ const translations = {
     ru: "Товар добавлен",
     en: "Product added"
   },
-  // Installment related translations
   totalAmount: {
     uz_latin: "Umumiy summa",
     uz_cyrillic: "Умумий сумма",
