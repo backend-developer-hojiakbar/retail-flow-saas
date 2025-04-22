@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext } from 'react';
 import { Language } from '@/types';
 import { useApp } from '@/context/AppContext';
@@ -150,7 +149,7 @@ const translations = {
   paymentMethod: {
     uz_latin: "To'lov usuli",
     uz_cyrillic: "Тўлов усули",
-    ru: "Способ оплаты",
+    ru: "Способ опла��ы",
     en: "Payment Method"
   },
   cash: {
@@ -457,6 +456,55 @@ const translations = {
     uz_cyrillic: "Фойдаланувчилар",
     ru: "Пользователи",
     en: "Users"
+  },
+  // Add new translation keys
+  list: {
+    uz_latin: "Ro'yxat",
+    uz_cyrillic: "Рўйхат",
+    ru: "Список",
+    en: "List"
+  },
+  current_stock: {
+    uz_latin: "Joriy zaxira",
+    uz_cyrillic: "Жорий захира",
+    ru: "Текущий запас",
+    en: "Current Stock"
+  },
+  min_stock: {
+    uz_latin: "Minimal zaxira",
+    uz_cyrillic: "Минимал захира",
+    ru: "Минимальный запас",
+    en: "Min Stock"
+  },
+  remaining: {
+    uz_latin: "Qolgan",
+    uz_cyrillic: "Қолган",
+    ru: "Осталось",
+    en: "Remaining"
+  },
+  store_information: {
+    uz_latin: "Do'kon ma'lumotlari",
+    uz_cyrillic: "Дўкон маълумотлари",
+    ru: "Информация о магазине",
+    en: "Store Information"
+  },
+  sales_report: {
+    uz_latin: "Sotuvlar hisoboti",
+    uz_cyrillic: "Сотувлар ҳисоботи",
+    ru: "Отчет по продажам",
+    en: "Sales Report"
+  },
+  inventory_report: {
+    uz_latin: "Ombor hisoboti",
+    uz_cyrillic: "Омбор ҳисоботи",
+    ru: "Отчет по складу",
+    en: "Inventory Report"
+  },
+  inventory_status: {
+    uz_latin: "Ombor holati",
+    uz_cyrillic: "Омбор ҳолати",
+    ru: "Статус склада",
+    en: "Inventory Status"
   }
 };
 
